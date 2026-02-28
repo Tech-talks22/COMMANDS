@@ -1,0 +1,87 @@
+🔹 1️⃣ Cluster & Node Commands
+
+| Command                             | Explanation                                                  |
+| ----------------------------------- | ------------------------------------------------------------ |
+| `kubectl cluster-info`              | Displays Kubernetes control plane and core service endpoints |
+| `kubectl get nodes`                 | Lists all nodes in the cluster                               |
+| `kubectl describe node <node-name>` | Shows detailed node information                              |
+| `kubectl top nodes`                 | Displays CPU and memory usage of nodes                       |
+
+
+🔹 2️⃣ Pod Commands
+
+| Command                                    | Explanation                                    |
+| ------------------------------------------ | ---------------------------------------------- |
+| `kubectl get pods`                         | Lists all pods in current namespace            |
+| `kubectl get pods -o wide`                 | Shows pods with node, IP and extra details     |
+| `kubectl describe pod <pod-name>`          | Displays detailed pod configuration and events |
+| `kubectl logs <pod-name>`                  | Shows logs of a pod                            |
+| `kubectl logs -f <pod-name>`               | Streams live pod logs                          |
+| `kubectl exec -it <pod-name> -- /bin/bash` | Opens shell inside a running pod               |
+| `kubectl delete pod <pod-name>`            | Deletes a specific pod                         |
+
+
+🔹 3️⃣ Deployment Commands
+
+| Command                                                  | Explanation                              |
+| -------------------------------------------------------- | ---------------------------------------- |
+| `kubectl get deployments`                                | Lists all deployments                    |
+| `kubectl apply -f deployment.yaml`                       | Creates or updates deployment using YAML |
+| `kubectl describe deployment <name>`                     | Shows deployment details                 |
+| `kubectl scale deployment <name> --replicas=5`           | Scales deployment to 5 replicas          |
+| `kubectl set image deployment/<name> container=image:v2` | Updates container image                  |
+| `kubectl rollout status deployment <name>`               | Checks rollout progress                  |
+| `kubectl rollout undo deployment <name>`                 | Rolls back to previous version           |
+| `kubectl rollout history deployment <name>`              | Shows deployment revision history        |
+
+
+🔹 4️⃣ ReplicaSet / StatefulSet / DaemonSet
+
+| Command                                         | Explanation        |
+| ----------------------------------------------- | ------------------ |
+| `kubectl get rs`                                | Lists ReplicaSets  |
+| `kubectl get statefulsets`                      | Lists StatefulSets |
+| `kubectl get daemonsets`                        | Lists DaemonSets   |
+| `kubectl scale statefulset <name> --replicas=3` | Scales StatefulSet |
+| `kubectl delete daemonset <name>`               | Deletes DaemonSet  |
+
+
+🔹 5️⃣ Job & CronJob
+
+| Command                           | Explanation              |
+| --------------------------------- | ------------------------ |
+| `kubectl get jobs`                | Lists batch jobs         |
+| `kubectl get cronjobs`            | Lists scheduled CronJobs |
+| `kubectl delete job <name>`       | Deletes a job            |
+| `kubectl describe cronjob <name>` | Shows CronJob details    |
+
+🔹 6️⃣ Service Commands
+
+| Command                                                      | Explanation                   |
+| ------------------------------------------------------------ | ----------------------------- |
+| `kubectl get services`                                       | Lists services                |
+| `kubectl describe service <name>`                            | Shows service configuration   |
+| `kubectl expose deployment <name> --type=NodePort --port=80` | Exposes deployment as service |
+| `kubectl delete service <name>`                              | Deletes a service             |
+
+🔹 7️⃣ Ingress Commands
+
+| Command                           | Explanation              |
+| --------------------------------- | ------------------------ |
+| `kubectl get ingress`             | Lists ingress resources  |
+| `kubectl describe ingress <name>` | Shows routing rules      |
+| `kubectl delete ingress <name>`   | Deletes ingress resource |
+
+
+🔹 8️⃣ ConfigMap & Secret Commands
+
+| Command                                                                 | Explanation                       |
+| ----------------------------------------------------------------------- | --------------------------------- |
+| `kubectl get configmaps`                                                | Lists ConfigMaps                  |
+| `kubectl create configmap my-config --from-file=file.txt`               | Creates ConfigMap from file       |
+| `kubectl get secrets`                                                   | Lists secrets                     |
+| `kubectl create secret generic my-secret --from-literal=password=admin` | Creates secret from literal value |
+
+
+
+
