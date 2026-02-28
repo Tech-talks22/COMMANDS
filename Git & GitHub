@@ -1,0 +1,200 @@
+🔥 1️⃣ Git Installation & Configuration
+
+| Command                                          | Single Line Explanation                   |
+| ------------------------------------------------ | ----------------------------------------- |
+| `git --version`                                  | Displays installed Git version            |
+| `git config --global user.name "YourName"`       | Sets global username                      |
+| `git config --global user.email "you@email.com"` | Sets global email                         |
+| `git config --list`                              | Shows all Git configurations              |
+| `git config --local user.name "Name"`            | Sets username for current repository only |
+
+
+🔥 2️⃣ Repository Management
+
+| Command                       | Single Line Explanation                           |
+| ----------------------------- | ------------------------------------------------- |
+| `git init`                    | Initializes new Git repository                    |
+| `git clone <repo-url>`        | Copies remote repository locally                  |
+| `git clone --bare <repo-url>` | Creates bare repository without working directory |
+
+
+
+🔥 3️⃣ Git File Lifecycle
+
+| Command              | Single Line Explanation                |
+| -------------------- | -------------------------------------- |
+| `git status`         | Shows file status in working directory |
+| `git add <file>`     | Adds file to staging area              |
+| `git add .`          | Adds all changes to staging area       |
+| `git restore <file>` | Discards changes in working directory  |
+| `git rm <file>`      | Removes file from Git tracking         |
+
+
+
+🔥 4️⃣ Commit & History
+
+| Command                    | Single Line Explanation          |
+| -------------------------- | -------------------------------- |
+| `git commit -m "message"`  | Creates commit with message      |
+| `git commit -am "message"` | Adds and commits tracked files   |
+| `git log`                  | Shows commit history             |
+| `git log --oneline`        | Shows compact commit history     |
+| `git show <commit-id>`     | Shows details of specific commit |
+| `git diff`                 | Shows unstaged changes           |
+| `git diff --staged`        | Shows staged changes             |
+
+
+🔥 5️⃣ Branching
+
+| Command                  | Single Line Explanation            |
+| ------------------------ | ---------------------------------- |
+| `git branch`             | Lists local branches               |
+| `git branch <name>`      | Creates new branch                 |
+| `git checkout <branch>`  | Switches branch                    |
+| `git switch <branch>`    | Switches branch (modern command)   |
+| `git checkout -b <name>` | Creates and switches to new branch |
+| `git branch -d <name>`   | Deletes branch                     |
+| `git branch -D <name>`   | Force deletes branch               |
+
+
+
+🔥 6️⃣ Merging & Rebasing
+
+| Command                      | Single Line Explanation                    |
+| ---------------------------- | ------------------------------------------ |
+| `git merge <branch>`         | Merges branch into current branch          |
+| `git merge --no-ff <branch>` | Forces merge commit                        |
+| `git rebase <branch>`        | Rebases current branch onto another        |
+| `git rebase --abort`         | Cancels rebase process                     |
+| `git rebase --continue`      | Continues rebase after conflict resolution |
+
+
+
+🔥 7️⃣ Handling Conflicts
+
+| Command          | Single Line Explanation                  |
+| ---------------- | ---------------------------------------- |
+| `git status`     | Shows conflicted files                   |
+| `git add <file>` | Marks conflict as resolved               |
+| `git commit`     | Finalizes merge after resolving conflict |
+
+
+
+🔥 8️⃣ Reset, Revert & Checkout
+
+| Command                    | Single Line Explanation                      |
+| -------------------------- | -------------------------------------------- |
+| `git reset --soft HEAD~1`  | Removes last commit but keeps changes staged |
+| `git reset --mixed HEAD~1` | Removes last commit and unstages changes     |
+| `git reset --hard HEAD~1`  | Deletes last commit and changes permanently  |
+| `git revert <commit-id>`   | Creates new commit reversing changes         |
+| `git checkout <commit-id>` | Moves to specific commit (detached HEAD)     |
+
+
+
+
+🔥 9️⃣ Git Stash
+
+| Command           | Single Line Explanation               |
+| ----------------- | ------------------------------------- |
+| `git stash`       | Temporarily saves uncommitted changes |
+| `git stash list`  | Lists stashed changes                 |
+| `git stash apply` | Applies latest stash                  |
+| `git stash pop`   | Applies and removes stash             |
+| `git stash drop`  | Deletes specific stash                |
+
+
+🔥 🔟 Tags
+
+| Command                        | Single Line Explanation |
+| ------------------------------ | ----------------------- |
+| `git tag`                      | Lists all tags          |
+| `git tag v1.0`                 | Creates lightweight tag |
+| `git tag -a v1.0 -m "release"` | Creates annotated tag   |
+| `git push origin v1.0`         | Pushes tag to remote    |
+
+
+
+🔥 1️⃣1️⃣ .gitignore & Clean
+
+| Command                  | Single Line Explanation               |
+| ------------------------ | ------------------------------------- |
+| `touch .gitignore`       | Creates ignore file                   |
+| `git clean -fd`          | Deletes untracked files and folders   |
+| `git rm --cached <file>` | Stops tracking file but keeps locally |
+
+
+
+🔥 1️⃣2️⃣ Remote Repositories
+
+| Command                       | Single Line Explanation         |
+| ----------------------------- | ------------------------------- |
+| `git remote -v`               | Shows remote repository URLs    |
+| `git remote add origin <url>` | Adds remote repository          |
+| `git fetch`                   | Downloads changes from remote   |
+| `git pull`                    | Fetches and merges changes      |
+| `git push`                    | Pushes changes to remote        |
+| `git push -u origin <branch>` | Pushes and sets upstream branch |
+
+
+
+🔥 1️⃣3️⃣ GitHub Pull Requests Flow
+
+
+| Command                          | Single Line Explanation  |
+| -------------------------------- | ------------------------ |
+| `git clone <fork-url>`           | Clones forked repository |
+| `git checkout -b feature-branch` | Creates feature branch   |
+| `git push origin feature-branch` | Pushes branch to GitHub  |
+| `git pull origin main`           | Syncs with main branch   |
+
+
+🔥 1️⃣4️⃣ SSH & Authentication
+
+
+| Command                                                  | Single Line Explanation |
+| -------------------------------------------------------- | ----------------------- |
+| `ssh-keygen -t rsa -b 4096`                              | Generates SSH key       |
+| `cat ~/.ssh/id_rsa.pub`                                  | Displays public key     |
+| `git remote set-url origin git@github.com:user/repo.git` | Switches to SSH remote  |
+
+
+
+🔥 1️⃣5️⃣ GitHub Actions (Basic)
+
+| Command                            | Single Line Explanation          |
+| ---------------------------------- | -------------------------------- |
+| `mkdir -p .github/workflows`       | Creates workflow directory       |
+| `touch .github/workflows/main.yml` | Creates workflow file            |
+| `git push`                         | Triggers GitHub Actions workflow |
+
+
+
+🔥 1️⃣6️⃣ Troubleshooting
+
+
+| Command                                 | Single Line Explanation         |
+| --------------------------------------- | ------------------------------- |
+| `git reflog`                            | Shows history of HEAD movements |
+| `git checkout -b recovered <commit-id>` | Recovers deleted branch         |
+| `git push --force`                      | Force pushes changes            |
+| `git branch --show-current`             | Shows current branch            |
+| `git fsck`                              | Checks repository integrity     |
+
+
+
+🔥 1️⃣7️⃣ Git in DevOps
+
+
+| Use Case              | Command                      |
+| --------------------- | ---------------------------- |
+| CI/CD Trigger         | `git push`                   |
+| GitOps deployment     | `git commit && git push`     |
+| Tag-based release     | `git tag && git push --tags` |
+| Sync fork             | `git fetch upstream`         |
+| Multi-branch workflow | `git checkout -b feature`    |
+
+
+
+
+
