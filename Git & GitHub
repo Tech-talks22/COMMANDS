@@ -16,6 +16,7 @@
 | `git init`                    | Initializes new Git repository                    |
 | `git clone <repo-url>`        | Copies remote repository locally                  |
 | `git clone --bare <repo-url>` | Creates bare repository without working directory |
+ how to change git remote reposetory -- "set-url" and repo url 
 
 
 
