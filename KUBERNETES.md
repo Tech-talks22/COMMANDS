@@ -23,7 +23,9 @@
 | Exec into Pod | `kubectl exec -it podname -- /bin/bash` |
 | Delete Pod    | `kubectl delete pod podname`            |
 
+
 3. YAML Validation
+
 | Task          | Command                                                                  |
 | ------------- | ------------------------------------------------------------------------ |
 | Dry Run       | `kubectl apply -f deploy.yml --dry-run=client`                           |
@@ -31,7 +33,9 @@
 | Apply YAML    | `kubectl apply -f deploy.yml`                                            |
 | Delete YAML   | `kubectl delete -f deploy.yml`                                           |
 
+
 4. Deployment Commands
+
 | Task              | Command                                         |
 | ----------------- | ----------------------------------------------- |
 | Create Deployment | `kubectl create deployment nginx --image=nginx` |
@@ -41,6 +45,7 @@
 | Delete Deployment | `kubectl delete deployment nginx`               |
 
 5. Service Commands
+   
 | Service Type     | Command                                                         |
 | ---------------- | --------------------------------------------------------------- |
 | ClusterIP        | `kubectl expose deployment nginx --port=80 --type=ClusterIP`    |
@@ -48,32 +53,42 @@
 | LoadBalancer     | `kubectl expose deployment nginx --port=80 --type=LoadBalancer` |
 | Get Services     | `kubectl get svc`                                               |
 | Describe Service | `kubectl describe svc nginx`                                    |
+
 6. Namespace Commands
+
 | Task             | Command                                                |
 | ---------------- | ------------------------------------------------------ |
 | Create Namespace | `kubectl create ns dev`                                |
 | Get Namespace    | `kubectl get ns`                                       |
 | Delete Namespace | `kubectl delete ns dev`                                |
 | Switch Namespace | `kubectl config set-context --current --namespace=dev` |
+
 7. Scaling Commands
+
 Horizontal Scaling
+
 | Task           | Command                                                                |
 | -------------- | ---------------------------------------------------------------------- |
 | Scale Replicas | `kubectl scale deployment nginx --replicas=5`                          |
 | Create HPA     | `kubectl autoscale deployment nginx --cpu-percent=50 --min=2 --max=10` |
 | Get HPA        | `kubectl get hpa`                                                      |
+
 Vertical Scaling
+
 | Task           | Command                         |
 | -------------- | ------------------------------- |
 | Edit Resources | `kubectl edit deployment nginx` |
 | View Resources | `kubectl describe pod podname`  |
+
 Cluster Scaling (EKS)
+
 | Task               | Command                  |
 | ------------------ | ------------------------ |
 | Cluster Autoscaler | Via Helm                 |
 | Increase Nodes     | `eksctl scale nodegroup` |
 
 8. Rollout Commands
+
 | Task              | Command                                                 |
 | ----------------- | ------------------------------------------------------- |
 | Rollout Status    | `kubectl rollout status deployment/nginx`               |
@@ -81,7 +96,9 @@ Cluster Scaling (EKS)
 | Rollout Restart   | `kubectl rollout restart deployment/nginx`              |
 | Rollback          | `kubectl rollout undo deployment/nginx`                 |
 | Rollback Revision | `kubectl rollout undo deployment/nginx --to-revision=2` |
+
 9. DaemonSet
+    
 | Task        | Command                          |
 | ----------- | -------------------------------- |
 | Create DS   | `kubectl apply -f daemonset.yml` |
@@ -89,6 +106,7 @@ Cluster Scaling (EKS)
 | Describe DS | `kubectl describe ds fluentd`    |
 
 10. StatefulSet
+
 | Task               | Command                            |
 | ------------------ | ---------------------------------- |
 | Create StatefulSet | `kubectl apply -f statefulset.yml` |
@@ -96,6 +114,7 @@ Cluster Scaling (EKS)
 | Delete StatefulSet | `kubectl delete sts mysql`         |
 
 11. Jobs & CronJobs
+    
 | Task           | Command                        |
 | -------------- | ------------------------------ |
 | Create Job     | `kubectl apply -f job.yml`     |
@@ -104,12 +123,15 @@ Cluster Scaling (EKS)
 | Get CronJobs   | `kubectl get cronjobs`         |
 
 12. ConfigMaps
+    
 | Task               | Command                                                        |
 | ------------------ | -------------------------------------------------------------- |
 | Create ConfigMap   | `kubectl create configmap app-config --from-literal=name=test` |
 | Get ConfigMap      | `kubectl get cm`                                               |
 | Describe ConfigMap | `kubectl describe cm app-config`                               |
+
 13. Secrets
+    
 | Task          | Command                                                                |
 | ------------- | ---------------------------------------------------------------------- |
 | Create Secret | `kubectl create secret generic db-secret --from-literal=password=1234` |
@@ -118,6 +140,7 @@ Cluster Scaling (EKS)
 | Delete Secret | `kubectl delete secret db-secret`                                      |
 
 14. Node Selector
+    
 | Task         | Command                                |
 | ------------ | -------------------------------------- |
 | Label Node   | `kubectl label nodes worker1 env=prod` |
@@ -125,6 +148,7 @@ Cluster Scaling (EKS)
 | Remove Label | `kubectl label nodes worker1 env-`     |
 
 15. Node Affinity
+
 | Task         | Command                              |
 | ------------ | ------------------------------------ |
 | View Labels  | `kubectl get nodes --show-labels`    |
@@ -137,6 +161,7 @@ RequiredDuringSchedulingIgnoredDuringExecution
 PreferredDuringSchedulingIgnoredDuringExecution
 
 16. Taints & Tolerations
+    
 | Task         | Command                                            |
 | ------------ | -------------------------------------------------- |
 | Add Taint    | `kubectl taint node worker1 env=prod:NoSchedule`   |
@@ -144,6 +169,7 @@ PreferredDuringSchedulingIgnoredDuringExecution
 | Remove Taint | `kubectl taint nodes worker1 env=prod:NoSchedule-` |
 
 17. RBAC
+
 | Task               | Command                            |
 | ------------------ | ---------------------------------- |
 | Create Role        | `kubectl apply -f role.yml`        |
@@ -152,6 +178,7 @@ PreferredDuringSchedulingIgnoredDuringExecution
 | Get RoleBindings   | `kubectl get rolebindings`         |
 
 18. Ingress
+
 | Task                  | Command                        |
 | --------------------- | ------------------------------ |
 | Install NGINX Ingress | Helm                           |
@@ -160,6 +187,7 @@ PreferredDuringSchedulingIgnoredDuringExecution
 | Describe Ingress      | `kubectl describe ingress app` |
 
 19. Helm Commands
+    
 | Task              | Command                                                                                                                                          |       |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
 | Install Helm      | `curl [https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3](https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3) | bash` |
@@ -171,6 +199,7 @@ PreferredDuringSchedulingIgnoredDuringExecution
 | Rollback Release  | `helm rollback nginx 1`                                                                                                                          |       |
 | Uninstall Release | `helm uninstall nginx`                                                                                                                           |       |
 20. ArgoCD Commands
+
 | Task                 | Command                                                    |
 | -------------------- | ---------------------------------------------------------- |
 | Install ArgoCD       | `kubectl apply -n argocd -f install.yaml`                  |
@@ -178,13 +207,16 @@ PreferredDuringSchedulingIgnoredDuringExecution
 | Get Initial Password | `kubectl get secret argocd-initial-admin-secret -n argocd` |
 | Sync Application     | `argocd app sync myapp`                                    |
 | List Applications    | `argocd app list`                                          |
+
 21. Persistent Volumes
+    
 | Task         | Command                    |
 | ------------ | -------------------------- |
 | Get PV       | `kubectl get pv`           |
 | Get PVC      | `kubectl get pvc`          |
 | Apply PVC    | `kubectl apply -f pvc.yml` |
 | Describe PVC | `kubectl describe pvc`     |
+
 22. Monitoring (Prometheus + Grafana)
 
 | Task                 | Command                                                                                 |
@@ -194,7 +226,9 @@ PreferredDuringSchedulingIgnoredDuringExecution
 | Install Stack        | `helm install monitoring prometheus-community/kube-prometheus-stack`                    |
 | Get Pods             | `kubectl get pods -n default`                                                           |
 | Port Forward Grafana | `kubectl port-forward svc/monitoring-grafana 3000:80`                                   |
+
 23. Terraform + Kubernetes
+    
 | Task       | Command                |
 | ---------- | ---------------------- |
 | Initialize | `terraform init`       |
@@ -206,13 +240,16 @@ PreferredDuringSchedulingIgnoredDuringExecution
 | Show State | `terraform state list` |
 
 24. Terraform + Helm
+    
 | Task       | Command             |
 | ---------- | ------------------- |
 | Initialize | `terraform init`    |
 | Plan       | `terraform plan`    |
 | Apply      | `terraform apply`   |
 | Destroy    | `terraform destroy` |
+
 Providers:
+
 provider "helm" {}
 provider "kubernetes" {}
 
@@ -225,6 +262,7 @@ provider "kubernetes" {}
 | Startup Probe   | Slow starting applications    |
 
 Verification:
+
 kubectl describe pod podname
 kubectl get events
 
