@@ -1,4 +1,5 @@
 1. EKS (Elastic Kubernetes Service)
+   
 | Task               | Command                                                                   |
 | ------------------ | ------------------------------------------------------------------------- |
 | Configure AWS CLI  | `aws configure`                                                           |
@@ -8,7 +9,9 @@
 | Get Nodes          | `kubectl get nodes`                                                       |
 | Delete Cluster     | `eksctl delete cluster --name demo-cluster`                               |
 
+
 2. Basic Kubernetes Commands
+
 | Task          | Command                                 |
 | ------------- | --------------------------------------- |
 | Cluster Info  | `kubectl cluster-info`                  |
